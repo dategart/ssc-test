@@ -1,6 +1,6 @@
 ##  Exercise 1 - Run Length Encoding
 
-Given a string, Your task is to complete the function encode that returns the run length encoded string for the given 
+Given a string, your task is to complete the function encode that returns the run length encoded string for the given 
 string. eg if the input string is “wwwwaaadexxxxxx”, then the function should return “w4a3d1e1x6″. You are required
 to complete the function encode that takes only one argument the string which is to be encoded and returns the encoded 
 string.
@@ -25,7 +25,10 @@ Build:
 
 Execute with one of the following:
 ```
-java -cp target/classes ssc.CharCounter "ddooodd"
+java -cp target/classes ssc.RunLengthEncoder "ddooodd"
+
+or 
+
 ./mvnw exec:java -Dexec.args="aaabbbdddeeef"
 ```
 
@@ -33,3 +36,9 @@ Tests:
 ```
 ./mvnw test
 ```
+
+## Solution
+
+Iterate over all the characters in the string, comparing the current character against previous one, in order to determine
+if they're consecutive. A counter keeps track of how many times we've seen the consecutive characters.  The character
+counts are appended to the output, as they're identified.  Time complexity: O(n)
